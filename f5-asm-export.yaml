@@ -15,6 +15,6 @@
     - name: Verify the system was installed
       bigip_asm_policy_fetch:
         name: demo
-        file: demo
+        file: demo.xml
         dest: /Volumes/GoogleDrive/My Drive/Projects/f5/f5-asm-ansible-export-import/
         provider: "{{ provider }}"
