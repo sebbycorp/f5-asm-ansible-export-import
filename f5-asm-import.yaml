@@ -1,6 +1,6 @@
 ---
 - name: import asm config
-  hosts: f5
+  hosts: lb
   connection: local
   vars:
     provider:
@@ -12,8 +12,10 @@
 
   tasks:
     - name: import asm policy
-      bigip_asm_policy_import:
-        name: asm_name
-        file: /root/asm_name.xml
+      bigip_asm_policy:
+        name: demo
+        file: /Volumes/GoogleDrive/My Drive/Projects/f5/f5-asm-ansible-export-import/demo.xml
+        active: yes
+        state: present
         provider: "{{ provider }}"
 

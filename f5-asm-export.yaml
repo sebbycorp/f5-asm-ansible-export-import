@@ -1,6 +1,6 @@
 ---
 - name: export asm config
-  hosts: f5
+  hosts: lb
   connection: local
   gather_facts: false
   vars:
@@ -14,7 +14,7 @@
   tasks:
     - name: Verify the system was installed
       bigip_asm_policy_fetch:
-        name: asm_name
-        file: asm_name
-        dest: /root/download
+        name: demo
+        file: demo
+        dest: /Volumes/GoogleDrive/My Drive/Projects/f5/f5-asm-ansible-export-import/
         provider: "{{ provider }}"
