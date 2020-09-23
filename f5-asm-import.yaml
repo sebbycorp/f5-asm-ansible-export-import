@@ -1,0 +1,19 @@
+---
+- name: import asm config
+  hosts: f5
+  connection: local
+  vars:
+    provider:
+      server: "{{private_ip}}"
+      user: "{{ansible_user}}"
+      password: "{{ansible_ssh_pass}}"
+      server_port: 443
+      validate_certs: false
+
+  tasks:
+    - name: import asm policy
+      bigip_asm_policy_import:
+        name: asm_name
+        file: /root/asm_name.xml
+        provider: "{{ provider }}"
+
